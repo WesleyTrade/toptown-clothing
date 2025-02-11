@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supervisor KPI & Employment Contract - Lisah Gane</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            padding: 20px;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #f4f4f4;
         }
         .container {
+            max-width: 900px;
+            margin: 40px auto;
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px #ccc;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 150px;
         }
         h1, h2, h3 {
             color: #007bff;
+            text-align: center;
         }
         table {
             width: 100%;
@@ -27,25 +38,50 @@
         }
         table, th, td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 12px;
             text-align: left;
         }
         th {
             background-color: #007bff;
             color: white;
         }
+        ul {
+            line-height: 1.6;
+        }
         .signature {
-            margin-top: 20px;
+            margin-top: 30px;
+        }
+        .signature p {
+            margin: 5px 0;
+        }
+        .btn-print {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .btn-print:hover {
+            background: #218838;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Supervisor KPI, Job Description & Employment Contract</h1>
-    <h2>Employee: Lisah Gane</h2>
-    <h3>Position: Supervisor – Bena Road, Goroka</h3>
-    <p><strong>Salary Level:</strong> PGK 750 per fortnight (Level 1)</p>
+    <div class="header">
+        <img src="https://wesleytrade.github.io/toptown-clothing/logo.png" alt="TopTown Clothing Logo" class="logo">
+        <h1>Supervisor KPI, Job Description & Employment Contract</h1>
+        <h2>Employee: Lisah Gane</h2>
+        <h3>Position: Supervisor – Bena Road, Goroka</h3>
+        <p><strong>Salary Level:</strong> PGK 750 per fortnight (Level 1)</p>
+    </div>
 
     <h2>1. Key Performance Indicators (KPIs)</h2>
     <table>
@@ -106,12 +142,6 @@
         <li>Accommodation Allowance: PGK 500 per month (Effective after probation. Not transferable.)</li>
     </ul>
 
-    <h3>Termination & Notice Period:</h3>
-    <ul>
-        <li>Failure to meet 3 consecutive weeks of sales targets may lead to a performance review.</li>
-        <li>One (1) week's written notice required for resignation.</li>
-    </ul>
-
     <h2>4. Acknowledgment & Acceptance</h2>
     <div class="signature">
         <p><strong>Employer:</strong> TopTown Clothing Limited</p>
@@ -126,6 +156,9 @@
         <p>Signature: _______________________</p>
         <p>Date: _______________________</p>
     </div>
+
+    <a href="javascript:window.print()" class="btn-print">Print Contract</a>
+
 </div>
 
 </body>
