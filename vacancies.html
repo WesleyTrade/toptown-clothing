@@ -40,7 +40,20 @@
             color: #333;
             line-height: 1.6;
         }
+        .dropdown {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        select {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
         .job {
+            display: none;
             border-bottom: 2px solid #ddd;
             padding-bottom: 20px;
             margin-bottom: 20px;
@@ -81,7 +94,18 @@
 
     <h2>📌 Current Job Vacancies</h2>
 
-    <div class="job">
+    <!-- Drop-Down Navigation -->
+    <div class="dropdown">
+        <label for="jobSelect"><strong>Select a Job Position:</strong></label>
+        <select id="jobSelect" onchange="showJobDetails()">
+            <option value="">-- Choose a Job --</option>
+            <option value="okari">Supervisor - Okari Street Shop (Level 2)</option>
+            <option value="fifth">Supervisor - 5th Street Shop, Lae (Level 1)</option>
+        </select>
+    </div>
+
+    <!-- Job Listings -->
+    <div id="okari" class="job">
         <h3>Supervisor - Okari Street Shop (Level 2)</h3>
         <p><strong>📍 Location:</strong> Okari Street Shop</p>
         <p><strong>📆 Employment Type:</strong> Full-Time</p>
@@ -106,7 +130,7 @@
         <a href="mailto:hr@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
     </div>
 
-    <div class="job">
+    <div id="fifth" class="job">
         <h3>Supervisor - 5th Street Shop, Lae (Level 1)</h3>
         <p><strong>📍 Location:</strong> 5th Street Shop, Lae</p>
         <p><strong>📆 Employment Type:</strong> Full-Time</p>
@@ -130,8 +154,19 @@
 
         <a href="mailto:hr@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
     </div>
-
 </div>
+
+<script>
+function showJobDetails() {
+    var selectedJob = document.getElementById("jobSelect").value;
+    document.getElementById("okari").style.display = "none";
+    document.getElementById("fifth").style.display = "none";
+
+    if (selectedJob) {
+        document.getElementById(selectedJob).style.display = "block";
+    }
+}
+</script>
 
 </body>
 </html>
