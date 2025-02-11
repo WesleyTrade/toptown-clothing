@@ -23,17 +23,15 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-        }
-        .header {
             text-align: center;
-            margin-bottom: 20px;
         }
         .logo {
             width: 150px;
+            margin-bottom: 20px;
         }
-        h1, h2, h3 {
+        h1 {
             color: #007bff;
-            text-align: center;
+            font-size: 26px;
         }
         p {
             font-size: 18px;
@@ -41,22 +39,26 @@
             line-height: 1.6;
         }
         .dropdown {
-            text-align: center;
-            margin-bottom: 20px;
+            margin-top: 20px;
         }
         select {
-            width: 60%;
-            padding: 10px;
-            font-size: 16px;
+            width: 70%;
+            padding: 12px;
+            font-size: 18px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #007bff;
             background-color: white;
+            cursor: pointer;
         }
         .job {
             display: none;
             border-bottom: 2px solid #ddd;
             padding-bottom: 20px;
             margin-bottom: 20px;
+            text-align: left;
+        }
+        .job h3 {
+            color: #007bff;
         }
         .apply-btn {
             display: block;
@@ -81,22 +83,33 @@
             margin-left: 20px;
             font-size: 17px;
         }
+        .footer {
+            margin-top: 30px;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 0 0 8px 8px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
-        <img src="https://wesleytrade.github.io/toptown-clothing/Logo-TTC-website.png" alt="TopTown Clothing Logo" class="logo">
-        <h1>Join Our Team at TopTown Clothing</h1>
-        <p>Explore exciting opportunities and become a part of our growing team.</p>
-    </div>
+    <img src="https://wesleytrade.github.io/toptown-clothing/Logo-TTC-website.png" alt="TopTown Clothing Logo" class="logo">
+    
+    <h1>Join Our Team at TopTown Clothing</h1>
+    <p>Explore exciting opportunities and become a part of our growing team.</p>
 
     <h2>📌 Current Job Vacancies</h2>
 
     <!-- Drop-Down Navigation -->
     <div class="dropdown">
-        <label for="jobSelect"><strong>Select a Job Position:</strong></label>
+        <label for="jobSelect"><strong>Select a Job Position:</strong></label><br>
         <select id="jobSelect" onchange="showJobDetails()">
             <option value="">-- Choose a Job --</option>
             <option value="okari">Supervisor - Okari Street Shop (Level 2)</option>
@@ -124,10 +137,9 @@
             <li>Minimum **2 years of retail or supervisory experience**.</li>
             <li>Must have at least **1 year of experience as a Pricing Clerk**.</li>
             <li>Strong sales & leadership skills.</li>
-            <li>Excellent customer service and problem-solving skills.</li>
         </ul>
 
-        <a href="mailto:hr@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
+        <a href="mailto:info@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
     </div>
 
     <div id="fifth" class="job">
@@ -141,18 +153,20 @@
             <li>Meet weekly sales target of <strong>K 27,098</strong> and monthly target of <strong>K 117,425</strong>.</li>
             <li>Manage sales, staff attendance, and daily operations.</li>
             <li>Maintain store cleanliness and track inventory.</li>
-            <li>Provide excellent customer service and resolve complaints.</li>
         </ul>
 
         <h4>✅ Required Skills & Qualifications:</h4>
         <ul>
             <li>At least **1 year of retail or supervisory experience**.</li>
             <li>Must have at least **1 year of experience as a Pricing Clerk**.</li>
-            <li>Ability to lead and motivate a team.</li>
-            <li>Good problem-solving and organizational skills.</li>
         </ul>
 
-        <a href="mailto:hr@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
+        <a href="mailto:info@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
+    </div>
+
+    <div class="footer">
+        <p>📞 Contact Us: <a href="mailto:info@toptownclothingltd.com">info@toptownclothingltd.com</a></p>
+        <p>🛒 Visit Our Online Store: <a href="https://www.toptownclothingltd.com" target="_blank">www.toptownclothingltd.com</a></p>
     </div>
 </div>
 
