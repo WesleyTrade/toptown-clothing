@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join TopTown Clothing! Explore Supervisor job vacancies at Okari Street Shop and 5th Street Shop in Lae. Apply now!">
+    <meta name="description" content="Join TopTown Clothing! Explore job vacancies for Supervisors and Cashiers at our various locations. Apply now!">
     <meta property="og:title" content="Job Vacancies - TopTown Clothing">
-    <meta property="og:description" content="Join TopTown Clothing! Explore Supervisor job vacancies at Okari Street Shop and 5th Street Shop in Lae. Apply now!">
+    <meta property="og:description" content="Join TopTown Clothing! Explore job vacancies for Supervisors and Cashiers at our various locations. Apply now!">
     <meta property="og:image" content="https://wesleytrade.github.io/toptown-clothing/Logo-TTC-website.png">
     <title>Job Vacancies - TopTown Clothing</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
@@ -116,24 +116,17 @@
             <option value="">-- Choose a Job --</option>
             <option value="okari">Supervisor (Level 2) - Okari Street Shop</option>
             <option value="fifth">Supervisor (Level 1) - 5th Street Shop, Lae</option>
+            <option value="cashier">Cashier - Waigani, Malaita Street, Bena Road</option>
         </select>
     </div>
 
-    <!-- Job Listings -->
+    <!-- Supervisor Jobs -->
     <div id="okari" class="job">
         <h3>Supervisor (Level 2) - Okari Street Shop</h3>
         <p><strong>📍 Location:</strong> Okari Street Shop</p>
         <p><strong>📆 Employment Type:</strong> Full-Time</p>
-        <p><strong>⏳ Working Hours:</strong> Monday – Saturday (8:00 AM – 5:00 PM, Compulsory on Fridays & Saturdays)</p>
         <p><strong>💰 Salary:</strong> PGK 900 per fortnight</p>
         <p><strong>📅 Closing Date:</strong> 14 February 2025</p>
-
-        <h4>✅ Required Skills & Qualifications:</h4>
-        <ul>
-            <li>Minimum <strong>2 years</strong> of retail or supervisory experience.</li>
-            <li>Must have at least <strong>1 year</strong> of experience as a Pricing Clerk.</li>
-            <li>Strong sales & leadership skills.</li>
-        </ul>
 
         <a href="mailto:infor@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
     </div>
@@ -142,14 +135,34 @@
         <h3>Supervisor (Level 1) - 5th Street Shop, Lae</h3>
         <p><strong>📍 Location:</strong> 5th Street Shop, Lae</p>
         <p><strong>📆 Employment Type:</strong> Full-Time</p>
-        <p><strong>⏳ Working Hours:</strong> Monday – Saturday (8:00 AM – 5:00 PM, Compulsory on Fridays & Saturdays)</p>
         <p><strong>💰 Salary:</strong> PGK 750 per fortnight</p>
         <p><strong>📅 Closing Date:</strong> 14 February 2025</p>
 
+        <a href="mailto:infor@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
+    </div>
+
+    <!-- Cashier Job -->
+    <div id="cashier" class="job">
+        <h3>📌 Job Vacancy: Cashier – TopTown Clothing</h3>
+        <p><strong>📍 Locations:</strong> Waigani – Steamships Compound, Malaita Street – Lae Market, Bena Road – Goroka</p>
+        <p><strong>📆 Employment Type:</strong> Full-Time</p>
+        <p><strong>💰 Salary:</strong> PGK 400 - PGK 600 per fortnight</p>
+        <p><strong>📅 Closing Date:</strong> 14 February 2025</p>
+
+        <h4>✅ Responsibilities:</h4>
+        <ul>
+            <li>Process customer transactions accurately and efficiently.</li>
+            <li>Provide excellent customer service and assist with inquiries.</li>
+            <li>Ensure cash register is balanced at the end of the shift.</li>
+            <li>Maintain store tidiness and organize checkout counters.</li>
+        </ul>
+
         <h4>✅ Required Skills & Qualifications:</h4>
         <ul>
-            <li>At least <strong>1 year</strong> of retail or supervisory experience.</li>
-            <li>Must have at least <strong>1 year</strong> of experience as a Pricing Clerk.</li>
+            <li>At least 6 months – 1 year of retail experience (preferred).</li>
+            <li>Strong cash handling skills and attention to detail.</li>
+            <li>Excellent customer service and communication skills.</li>
+            <li>Ability to work well in a team and follow store policies.</li>
         </ul>
 
         <a href="mailto:infor@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
@@ -164,8 +177,7 @@
 <script>
 function showJobDetails() {
     var selectedJob = document.getElementById("jobSelect").value;
-    document.getElementById("okari").style.display = "none";
-    document.getElementById("fifth").style.display = "none";
+    document.querySelectorAll('.job').forEach(el => el.style.display = "none");
 
     if (selectedJob) {
         document.getElementById(selectedJob).style.display = "block";
