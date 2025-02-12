@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join TopTown Clothing! Explore Supervisor job vacancies at Okari Street Shop and 5th Street Shop in Lae. Apply now!">
+    <meta name="description" content="Join TopTown Clothing! Explore job vacancies for Supervisors & Cashiers at Bena Road, Malaita Street, and Waigani. Apply now!">
     <meta property="og:title" content="Job Vacancies - TopTown Clothing">
-    <meta property="og:description" content="Join TopTown Clothing! Explore Supervisor job vacancies at Okari Street Shop and 5th Street Shop in Lae. Apply now!">
+    <meta property="og:description" content="Join TopTown Clothing! Explore job vacancies for Supervisors & Cashiers at Bena Road, Malaita Street, and Waigani. Apply now!">
     <meta property="og:image" content="https://wesleytrade.github.io/toptown-clothing/Logo-TTC-website.png">
     <title>Job Vacancies - TopTown Clothing</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
@@ -116,41 +116,39 @@
             <option value="">-- Choose a Job --</option>
             <option value="okari">Supervisor (Level 2) - Okari Street Shop</option>
             <option value="fifth">Supervisor (Level 1) - 5th Street Shop, Lae</option>
+            <option value="cashier-bena">Cashier - Bena Road, Goroka</option>
+            <option value="cashier-malaita">Cashier - Malaita Street, Lae Market</option>
+            <option value="cashier-waigani">Cashier - Waigani, Steamships Compound</option>
         </select>
     </div>
 
     <!-- Job Listings -->
-    <div id="okari" class="job">
-        <h3>Supervisor (Level 2) - Okari Street Shop</h3>
-        <p><strong>📍 Location:</strong> Okari Street Shop</p>
+    <div id="cashier-bena" class="job">
+        <h3>Cashier - Bena Road, Goroka</h3>
+        <p><strong>📍 Location:</strong> Bena Road, Goroka</p>
         <p><strong>📆 Employment Type:</strong> Full-Time</p>
-        <p><strong>⏳ Working Hours:</strong> Monday – Saturday (8:00 AM – 5:00 PM, Compulsory on Fridays & Saturdays)</p>
-        <p><strong>💰 Salary:</strong> PGK 900 per fortnight</p>
+        <p><strong>💰 Salary:</strong> PGK 400 – PGK 600 per fortnight</p>
         <p><strong>📅 Closing Date:</strong> 14 February 2025</p>
-
-        <h4>✅ Required Skills & Qualifications:</h4>
-        <ul>
-            <li>Minimum <strong>2 years</strong> of retail or supervisory experience.</li>
-            <li>Must have at least <strong>1 year</strong> of experience as a Pricing Clerk.</li>
-            <li>Strong sales & leadership skills.</li>
-        </ul>
 
         <a href="mailto:infor@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
     </div>
 
-    <div id="fifth" class="job">
-        <h3>Supervisor (Level 1) - 5th Street Shop, Lae</h3>
-        <p><strong>📍 Location:</strong> 5th Street Shop, Lae</p>
+    <div id="cashier-malaita" class="job">
+        <h3>Cashier - Malaita Street, Lae Market</h3>
+        <p><strong>📍 Location:</strong> Malaita Street, Lae Market</p>
         <p><strong>📆 Employment Type:</strong> Full-Time</p>
-        <p><strong>⏳ Working Hours:</strong> Monday – Saturday (8:00 AM – 5:00 PM, Compulsory on Fridays & Saturdays)</p>
-        <p><strong>💰 Salary:</strong> PGK 750 per fortnight</p>
+        <p><strong>💰 Salary:</strong> PGK 400 – PGK 600 per fortnight</p>
         <p><strong>📅 Closing Date:</strong> 14 February 2025</p>
 
-        <h4>✅ Required Skills & Qualifications:</h4>
-        <ul>
-            <li>At least <strong>1 year</strong> of retail or supervisory experience.</li>
-            <li>Must have at least <strong>1 year</strong> of experience as a Pricing Clerk.</li>
-        </ul>
+        <a href="mailto:infor@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
+    </div>
+
+    <div id="cashier-waigani" class="job">
+        <h3>Cashier - Waigani, Steamships Compound</h3>
+        <p><strong>📍 Location:</strong> Waigani, Steamships Compound</p>
+        <p><strong>📆 Employment Type:</strong> Full-Time</p>
+        <p><strong>💰 Salary:</strong> PGK 400 – PGK 600 per fortnight</p>
+        <p><strong>📅 Closing Date:</strong> 14 February 2025</p>
 
         <a href="mailto:infor@toptownclothingltd.com" class="apply-btn">📩 Apply Now</a>
     </div>
@@ -163,10 +161,8 @@
 
 <script>
 function showJobDetails() {
+    document.querySelectorAll('.job').forEach(job => job.style.display = "none");
     var selectedJob = document.getElementById("jobSelect").value;
-    document.getElementById("okari").style.display = "none";
-    document.getElementById("fifth").style.display = "none";
-
     if (selectedJob) {
         document.getElementById(selectedJob).style.display = "block";
     }
