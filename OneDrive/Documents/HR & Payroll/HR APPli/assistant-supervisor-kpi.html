@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assistant Supervisor KPI | TopTown Clothing</title>
+    <title>Assistant Supervisor KPI Tracking | TopTown Clothing</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
     <style>
         body {
@@ -24,28 +24,37 @@
             text-align: center;
             color: #007bff;
         }
-        h2 {
-            color: #007bff;
-            margin-top: 20px;
-        }
-        p, ul {
-            font-size: 18px;
-            color: #333;
-            line-height: 1.6;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-        th, td {
+        table, th, td {
             border: 1px solid #ddd;
             text-align: center;
+        }
+        th, td {
             padding: 12px;
         }
         th {
             background-color: #007bff;
             color: white;
+        }
+        .submit-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #0056b3;
         }
         .footer {
             margin-top: 30px;
@@ -64,74 +73,54 @@
 <body>
 
 <div class="container">
-    <h1>Assistant Supervisor KPI Assessment Criteria</h1>
+    <h1>Assistant Supervisor KPI Tracking</h1>
 
-    <h2>1. Sales & Revenue Performance (30%)</h2>
-    <p><strong>Target:</strong> Support the Supervisor in achieving weekly and monthly sales targets.</p>
-    <p><strong>Assessment Criteria:</strong></p>
-    <ul>
-        <li>Contribution to sales performance.</li>
-        <li>Effectiveness in upselling & cross-selling.</li>
-        <li>Customer purchase volume & satisfaction feedback.</li>
-    </ul>
+    <form id="kpiForm">
+        <table>
+            <tr>
+                <th>Employee Name</th>
+                <th>Week Ending</th>
+                <th>Sales (30%)</th>
+                <th>Supervision (20%)</th>
+                <th>Operations (20%)</th>
+                <th>Customer Service (15%)</th>
+                <th>Reporting (15%)</th>
+                <th>Total Score</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="employeeName" required></td>
+                <td><input type="date" id="weekEnding" required></td>
+                <td><input type="number" id="sales" min="1" max="5" required></td>
+                <td><input type="number" id="supervision" min="1" max="5" required></td>
+                <td><input type="number" id="operations" min="1" max="5" required></td>
+                <td><input type="number" id="customerService" min="1" max="5" required></td>
+                <td><input type="number" id="reporting" min="1" max="5" required></td>
+                <td><span id="totalScore">-</span></td>
+            </tr>
+        </table>
 
-    <h2>2. Staff Supervision & Discipline (20%)</h2>
-    <p><strong>Target:</strong> Ensure staff attendance, discipline, and compliance with company policies.</p>
-    <p><strong>Assessment Criteria:</strong></p>
-    <ul>
-        <li>Monitoring staff punctuality and break times.</li>
-        <li>Enforcing company rules (e.g., no phones, no excessive conversations).</li>
-        <li>Handling staff misconduct & reporting issues to the Supervisor.</li>
-    </ul>
-
-    <h2>3. Store Operations & Inventory Management (20%)</h2>
-    <p><strong>Target:</strong> Maintain store cleanliness, stock organization, and efficiency.</p>
-    <p><strong>Assessment Criteria:</strong></p>
-    <ul>
-        <li>Store cleanliness & weekly store audits.</li>
-        <li>Inventory management, stock checks & restocking.</li>
-        <li>Ensuring product placement & displays are correct.</li>
-    </ul>
-
-    <h2>4. Customer Service & Complaint Handling (15%)</h2>
-    <p><strong>Target:</strong> Ensure high customer service standards and resolve complaints.</p>
-    <p><strong>Assessment Criteria:</strong></p>
-    <ul>
-        <li>Customer satisfaction ratings (feedback, surveys).</li>
-        <li>Number of customer complaints & resolution effectiveness.</li>
-        <li>Handling difficult customer interactions professionally.</li>
-    </ul>
-
-    <h2>5. Reporting & Communication (15%)</h2>
-    <p><strong>Target:</strong> Ensure accurate and timely submission of reports to the Supervisor.</p>
-    <p><strong>Assessment Criteria:</strong></p>
-    <ul>
-        <li>Daily sales & performance reports submitted on time.</li>
-        <li>Accuracy of sales, attendance, and stock reports.</li>
-        <li>Effective communication with staff and management.</li>
-    </ul>
-
-    <h2>Scoring Scale</h2>
-    <table>
-        <tr>
-            <th>Score</th>
-            <th>Performance Rating</th>
-        </tr>
-        <tr><td>90% – 100%</td><td>Excellent (Bonus Eligible)</td></tr>
-        <tr><td>80% – 89%</td><td>Good (Meets Expectations)</td></tr>
-        <tr><td>65% – 79%</td><td>Needs Improvement (Training Required)</td></tr>
-        <tr><td>Below 65%</td><td>Poor (Performance Review Required)</td></tr>
-    </table>
-
-    <h2>Performance Tracking & Reports</h2>
-    <p><a href="assistant-supervisor-kpi-tracking.html">📊 Access KPI Tracking Sheet</a></p>
-
+        <button type="button" class="submit-btn" onclick="calculateScore()">Submit KPI</button>
+    </form>
 </div>
 
 <div class="footer">
     <p>📞 Contact Us: <a href="mailto:infor@toptownclothingltd.com">infor@toptownclothingltd.com</a></p>
     <p>🛒 Visit Our Online Store: <a href="https://www.toptownclothingltd.com">www.toptownclothingltd.com</a></p>
 </div>
+
+<script>
+    function calculateScore() {
+        let sales = parseInt(document.getElementById("sales").value) || 0;
+        let supervision = parseInt(document.getElementById("supervision").value) || 0;
+        let operations = parseInt(document.getElementById("operations").value) || 0;
+        let customerService = parseInt(document.getElementById("customerService").value) || 0;
+        let reporting = parseInt(document.getElementById("reporting").value) || 0;
+
+        let total = (sales * 0.3) + (supervision * 0.2) + (operations * 0.2) + (customerService * 0.15) + (reporting * 0.15);
+        document.getElementById("totalScore").innerText = total.toFixed(2);
+        alert("KPI Submitted! Total Score: " + total.toFixed(2));
+    }
+</script>
 
 </body>
 </html>
