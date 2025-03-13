@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant Supervisor KPI Tracking | TopTown Clothing</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th, td {
+            padding: 12px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .submit-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+        .footer {
+            margin-top: 30px;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 0 0 8px 8px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Assistant Supervisor KPI Tracking</h1>
+
+    <form id="kpiForm">
+        <table>
+            <tr>
+                <th>Employee Name</th>
+                <th>Week Ending</th>
+                <th>Sales (30%)</th>
+                <th>Supervision (20%)</th>
+                <th>Operations (20%)</th>
+                <th>Customer Service (15%)</th>
+                <th>Reporting (15%)</th>
+                <th>Total Score</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="employeeName" required></td>
+                <td><input type="date" id="weekEnding" required></td>
+                <td><input type="number" id="sales" min="1" max="5" required></td>
+                <td><input type="number" id="supervision" min="1" max="5" required></td>
+                <td><input type="number" id="operations" min="1" max="5" required></td>
+                <td><input type="number" id="customerService" min="1" max="5" required></td>
+                <td><input type="number" id="reporting" min="1" max="5" required></td>
+                <td><span id="totalScore">-</span></td>
+            </tr>
+        </table>
+
+        <button type="button" class="submit-btn" onclick="calculateScore()">Submit KPI</button>
+    </form>
+</div>
+
+<div class="footer">
+    <p>📞 Contact Us: <a href="mailto:infor@toptownclothingltd.com">infor@toptownclothingltd.com</a></p>
+    <p>🛒 Visit Our Online Store: <a href="https://www.toptownclothingltd.com">www.toptownclothingltd.com</a></p>
+</div>
+
+<script>
+    function calculateScore() {
+        let sales = parseInt(document.getElementById("sales").value) || 0;
+        let supervision = parseInt(document.getElementById("supervision").value) || 0;
+        let operations = parseInt(document.getElementById("operations").value) || 0;
+        let customerService = parseInt(document.getElementById("customerService").value) || 0;
+        let reporting = parseInt(document.getElementById("reporting").value) || 0;
+
+        let total = (sales * 0.3) + (supervision * 0.2) + (operations * 0.2) + (customerService * 0.15) + (reporting * 0.15);
+        document.getElementById("totalScore").innerText = total.toFixed(2);
+        alert("KPI Submitted! Total Score: " + total.toFixed(2));
+    }
+</script>
+
+</body>
+</html>
